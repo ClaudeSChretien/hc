@@ -12,12 +12,13 @@
                     </div><!--/.gallery-header-->
                     <div class="blog-content">
                         <div class="row">
-
+                            @foreach($blogs as $blog)
+                            
                             <div class="col-sm-4 col-md-4">
                                 <div class="thumbnail">
-                                    <h2>trending news <span>15 november 2017</span></h2>
+                                    <h2>{{$blog->author}} <span>{{$blog->date}}</span></h2>
                                     <div class="thumbnail-img">
-                                        <img src="{{URL::asset('image/pei.jpg')}}" alt="blog-img">
+                                        <img src="blog/{{$blog->filename}}" alt="blog-img">
                                         <div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
                                     
                                     </div><!--/.thumbnail-img-->
@@ -26,65 +27,19 @@
                                         <div class="blog-txt">
                                             <h3>
                                                 <a href="#">
-                                                    Discover on beautiful weather, Fantastic foods and historical place in Prag
+                                                    {{$blog->titre}}
                                                 </a>
                                             </h3>
                                             <p>
-                                                Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
+                                                {{$blog->paragraphe}}
                                             </p>
-                                            <a href="#">Read More</a>
+                                            <a href="{{ route('blogs.show',$blog->id)}}">Read More</a>
                                         </div><!--/.blog-txt-->
                                     </div><!--/.caption-->
                                 </div><!--/.thumbnail-->
 
                             </div><!--/.col-->
-
-                            <div class="col-sm-4 col-md-4">
-                                <div class="thumbnail">
-                                    <h2>trending news <span>15 november 2017</span></h2>
-                                    <div class="thumbnail-img">
-                                        <img src="{{URL::asset('image/ontario3.jpg')}}" alt="blog-img">
-                                        <div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
-                                    
-                                    </div><!--/.thumbnail-img-->
-                                    <div class="caption">
-                                        <div class="blog-txt">
-                                            <h3>
-                                                <a href="#">
-                                                    Discover on beautiful weather, Fantastic foods and historical place in india
-                                                </a>
-                                            </h3>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
-                                            </p>
-                                            <a href="#">Read More</a>
-                                        </div><!--/.blog-txt-->
-                                    </div><!--/.caption-->
-                                </div><!--/.thumbnail-->
-
-                            </div><!--/.col-->
-
-                            <div class="col-sm-4 col-md-4">
-                                <div class="thumbnail">
-                                    <h2>trending news <span>15 november 2017</span></h2>
-                                    <div class="thumbnail-img">
-                                        <img src="{{URL::asset('image/windsor.jpg')}}" alt="blog-img">
-                                        <div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
-                                    
-                                    </div><!--/.thumbnail-img-->
-                                    <div class="caption">
-                                        <div class="blog-txt">
-                                            <h3><a href="#">10 Most Natural place to Discover</a></h3>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
-                                            </p>
-                                            <a href="#">Read More</a>
-                                        </div><!--/.blog-txt-->
-                                    </div><!--/.caption-->
-                                </div><!--/.thumbnail-->
-
-                            </div><!--/.col-->
-
+                        @endforeach
                         </div><!--/.row-->
                     </div><!--/.blog-content-->
                 </div><!--/.blog-details-->

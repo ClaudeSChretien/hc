@@ -28,11 +28,11 @@
             @foreach($photos as $photo)
             <tr>
                 <td>{{$photo->id}}</td>
-                <td>{{$photo->date}} {{$photo->last_name}}</td>
+                <td>{{$photo->date}}</td>
                 <td>{{$photo->photographer}}</td>
                 <td>{{$photo->location}}</td>
                 <td><a href="{{$photo->location_url}}" target="_blank">{{$photo->location_url}}</a></td>
-                <td><img src="photo/{{$photo->filename}}" alt="" style="width: 80px;"></td>
+                <td><a href="{{ route('photos.show',$photo->id)}}"><img src="photo/{{$photo->filename}}" alt="" style="width: 80px;"></a></td>
  
 
 

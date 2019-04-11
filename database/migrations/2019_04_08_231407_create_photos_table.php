@@ -16,7 +16,7 @@ class CreatePhotosTable extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('date')->default(Carbon::now());
+            $table->string('date')->default(Carbon::now()->toDateString());
             $table->string('filename');
             $table->string('original_filename');
             $table->string('photographer');   

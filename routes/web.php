@@ -18,3 +18,5 @@ Route::get('/gallery', function () {
 Route::resource('/', 'HomeController');
 Route::resource('contacts', 'ContactController');
 Route::resource('photos', 'photoController');
+Route::resource('blogs', 'blogController');
+Route::resource('blogsManager', 'blogManagerController');
